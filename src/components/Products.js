@@ -1,6 +1,4 @@
-import items from "../data.json";
-
-const Products = () => {
+const Products = ({ items }) => {
   return (
     <main className="col-lg-9">
       <header className="d-sm-flex align-items-center border-bottom mb-4 pb-3">

@@ -1,6 +1,4 @@
-import React from "react";
-
-const Filters = () => {
+const Filters = ({ categories }) => {
   return (
     <aside className="col-lg-3">
       <button
@@ -10,44 +8,6 @@ const Filters = () => {
         Show filter
       </button>
       <div id="aside_filter" className="collapse card d-lg-block mb-5">
-        <article className="filter-group">
-          <header className="card-header">
-            <a href="#" className="title" data-bs-target="#collapse_aside1">
-              {" "}
-              Related items
-            </a>
-          </header>
-          <div className="collapse show" id="collapse_aside1">
-            <div className="card-body">
-              <ul className="list-menu">
-                <li>
-                  <a href="#">Electronics </a>
-                </li>
-                <li>
-                  <a href="#">Accessories </a>
-                </li>
-                <li>
-                  <a href="#">Home items </a>
-                </li>
-                <li>
-                  <a href="#">Men's clothing </a>
-                </li>
-                <li>
-                  <a href="#">Interior items </a>
-                </li>
-                <li>
-                  <a href="#">Magazines </a>
-                </li>
-                <li>
-                  <a href="#">Category name </a>
-                </li>
-                <li>
-                  <a href="#">Home items </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
         <article className="filter-group">
           <header className="card-header">
             <a
@@ -60,41 +20,16 @@ const Filters = () => {
           </header>
           <div className="collapse show" id="collapse_aside_brands">
             <div className="card-body">
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Mercedes </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">120</b>
-              </label>
-
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Toyota </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">15</b>
-              </label>
-
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Mitsubishi </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">35</b>
-              </label>
-
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Nissan </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">89</b>
-              </label>
-
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Honda </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">30</b>
-              </label>
-
-              <label className="form-check mb-2">
-                <input className="form-check-input" type="checkbox" value="" />
-                <span className="form-check-label"> Honda accord </span>
-                <b className="badge rounded-pill bg-gray-dark float-end">30</b>
-              </label>
+              {categories.map((categ) => (
+                <label className="form-check mb-2">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value={categ}
+                  />
+                  <span className="form-check-label">{categ}</span>
+                </label>
+              ))}
             </div>
           </div>
         </article>
