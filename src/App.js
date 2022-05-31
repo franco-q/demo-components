@@ -1,3 +1,4 @@
+import items from "./data.json";
 import "./App.css";
 
 function App() {
@@ -76,16 +77,10 @@ function App() {
               >
                 Show filter
               </button>
-
               <div id="aside_filter" className="collapse card d-lg-block mb-5">
                 <article className="filter-group">
                   <header className="card-header">
-                    <a
-                      href="#"
-                      className="title"
-                      data-bs-target="#collapse_aside1"
-                    >
-                      {" "}
+                    <a href="#" className="title">
                       Related items
                     </a>
                   </header>
@@ -122,11 +117,7 @@ function App() {
                 </article>
                 <article className="filter-group">
                   <header className="card-header">
-                    <a
-                      href="#"
-                      className="title"
-                      data-bs-target="#collapse_aside_brands"
-                    >
+                    <a href="#" className="title">
                       Brands
                     </a>
                   </header>
@@ -143,7 +134,6 @@ function App() {
                           120
                         </b>
                       </label>
-
                       <label className="form-check mb-2">
                         <input
                           className="form-check-input"
@@ -155,7 +145,6 @@ function App() {
                           15
                         </b>
                       </label>
-
                       <label className="form-check mb-2">
                         <input
                           className="form-check-input"
@@ -167,7 +156,6 @@ function App() {
                           35
                         </b>
                       </label>
-
                       <label className="form-check mb-2">
                         <input
                           className="form-check-input"
@@ -179,7 +167,6 @@ function App() {
                           89
                         </b>
                       </label>
-
                       <label className="form-check mb-2">
                         <input
                           className="form-check-input"
@@ -191,7 +178,6 @@ function App() {
                           30
                         </b>
                       </label>
-
                       <label className="form-check mb-2">
                         <input
                           className="form-check-input"
@@ -211,7 +197,6 @@ function App() {
                     <a
                       href="#"
                       className="title"
-                      data-bs-target="#collapse_aside2"
                     >
                       Price
                     </a>
@@ -287,220 +272,36 @@ function App() {
                   </div>
                 </div>
               </header>
-
               <div className="row">
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/10.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$99.00</strong>
-                        <del className="price-old">$170.00</del>
+                {items.map((item) => (
+                  <div className="col-lg-4 col-md-6 col-sm-6 mb-4">
+                    <figure className="card card-product-grid h-100">
+                      <div className="img-wrap">
+                        <img src={item.image} />
                       </div>
-                      <p className="title mb-2">
-                        T-shirts with multiple colors, for men and lady
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/11.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$120.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        Winter Jacket for Men and Women, All sizes
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/12.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$120.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        T-shirts with multiple colors, for men and lady
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/13.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$120.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        T-shirts with multiple colors, for men and lady
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/14.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$510.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        Blazer Suit Dress Jacket for Men, Blue color
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/10.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$79.99</strong>
-                      </div>
-                      <p className="title mb-2">
-                        Rucksack Backpack The Bridge Large Line Mounts
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/11.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$120.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        T-shirts with multiple colors, for men and lady
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/12.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$120.00</strong>
-                      </div>
-                      <p className="title mb-2">
-                        T-shirts with multiple colors, for men and lady
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <figure className="card card-product-grid">
-                    <div className="img-wrap">
-                      <img src="images/items/9.jpg" />
-                    </div>
-                    <figcaption className="info-wrap border-top">
-                      <div className="price-wrap">
-                        <strong className="price">$43.50</strong>
-                      </div>
-                      <p className="title mb-2">
-                        Summer New Men's Denim Jeans Shorts{" "}
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Add to cart
-                      </a>{" "}
-                      <a href="#" className="btn btn-light btn-icon">
-                        {" "}
-                        <i className="fa fa-heart"></i>{" "}
-                      </a>
-                    </figcaption>
-                  </figure>
-                </div>
+                      <figcaption className="info-wrap border-top">
+                        <div className="price-wrap">
+                          <strong className="price">${item.price}</strong>
+                          <del className="price-old">
+                            ${item.price + item.price * Math.random()}
+                          </del>
+                        </div>
+                        <p className="title mb-2">{item.title}</p>
+                        <a href="#" className="btn btn-primary">
+                          Add to cart
+                        </a>{" "}
+                        <a href="#" className="btn btn-light btn-icon">
+                          {" "}
+                          <i className="fa fa-heart"></i>{" "}
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </div>
+                ))}
               </div>
               <footer className="d-flex mt-4">
                 <div>
                   <a href="#" className="btn btn-light">
-                    {" "}
                     &laquo; Go back
                   </a>
                 </div>
