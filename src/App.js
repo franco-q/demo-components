@@ -1,7 +1,16 @@
-import items from "./data.json";
+import items from "./items.json";
+import categories from "./categories.json";
 import "./App.css";
 
 function App() {
+  const addItemToCart = (item) => {
+    alert(`${item.title} added to cart`);
+  };
+
+  const addItemToWishList = (item) => {
+    alert(`${item.title} added to wishlist`);
+  };
+
   return (
     <div className="App">
       <header className="section-header">
@@ -18,7 +27,7 @@ function App() {
                   <a href="#" className="btn btn-light mx-2">
                     <i className="fa fa-user"></i>{" "}
                     <span className="ms-1 d-none d-sm-inline-block">
-                      Sign in{" "}
+                      Sign in
                     </span>
                   </a>
                   <a href="#" className="btn btn-light position-relative mx-2">
@@ -71,138 +80,28 @@ function App() {
         <div className="container">
           <div className="row">
             <aside className="col-lg-3">
-              <button
-                className="btn btn-outline-secondary mb-3 w-100 d-lg-none"
-                data-bs-target="#aside_filter"
-              >
-                Show filter
-              </button>
-              <div id="aside_filter" className="collapse card d-lg-block mb-5">
-                <article className="filter-group">
-                  <header className="card-header">
-                    <a href="#" className="title">
-                      Related items
-                    </a>
-                  </header>
-                  <div className="collapse show" id="collapse_aside1">
+              <div id="aside_filter" className="card mb-5">
+                <div className="filter-group">
+                  <div className="">
                     <div className="card-body">
-                      <ul className="list-menu">
-                        <li>
-                          <a href="#">Electronics </a>
-                        </li>
-                        <li>
-                          <a href="#">Accessories </a>
-                        </li>
-                        <li>
-                          <a href="#">Home items </a>
-                        </li>
-                        <li>
-                          <a href="#">Men's clothing </a>
-                        </li>
-                        <li>
-                          <a href="#">Interior items </a>
-                        </li>
-                        <li>
-                          <a href="#">Magazines </a>
-                        </li>
-                        <li>
-                          <a href="#">Category name </a>
-                        </li>
-                        <li>
-                          <a href="#">Home items </a>
-                        </li>
-                      </ul>
+                      <h6 className="mb-3">Categories</h6>
+                      {categories.map((categ) => (
+                        <label className="form-check mb-2">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={categ}
+                          />
+                          <span className="form-check-label">{categ}</span>
+                        </label>
+                      ))}
                     </div>
                   </div>
-                </article>
-                <article className="filter-group">
-                  <header className="card-header">
-                    <a href="#" className="title">
-                      Brands
-                    </a>
-                  </header>
-                  <div className="collapse show" id="collapse_aside_brands">
+                </div>
+                <div className="filter-group">
+                  <div className="">
                     <div className="card-body">
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Mercedes </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          120
-                        </b>
-                      </label>
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Toyota </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          15
-                        </b>
-                      </label>
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Mitsubishi </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          35
-                        </b>
-                      </label>
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Nissan </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          89
-                        </b>
-                      </label>
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Honda </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          30
-                        </b>
-                      </label>
-                      <label className="form-check mb-2">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <span className="form-check-label"> Honda accord </span>
-                        <b className="badge rounded-pill bg-gray-dark float-end">
-                          30
-                        </b>
-                      </label>
-                    </div>
-                  </div>
-                </article>
-                <article className="filter-group">
-                  <header className="card-header">
-                    <a
-                      href="#"
-                      className="title"
-                    >
-                      Price
-                    </a>
-                  </header>
-                  <div className="collapse show" id="collapse_aside2">
-                    <div className="card-body">
+                      <h6 className="mb-3">Price</h6>
                       <input
                         type="range"
                         className="form-range"
@@ -221,7 +120,6 @@ function App() {
                             type="number"
                           />
                         </div>
-
                         <div className="col-6">
                           <label htmlFor="max" className="form-label">
                             Max
@@ -239,12 +137,14 @@ function App() {
                       </button>
                     </div>
                   </div>
-                </article>
+                </div>
               </div>
             </aside>
             <main className="col-lg-9">
               <header className="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-                <strong className="d-block py-2">32 Items found </strong>
+                <strong className="d-block py-2">
+                  {items.length} Items found
+                </strong>
                 <div className="ms-auto d-sm-flex align-items-center">
                   <select className="form-select d-inline-block w-auto me-1">
                     <option value="0">Best match</option>
@@ -282,17 +182,28 @@ function App() {
                       <figcaption className="info-wrap border-top">
                         <div className="price-wrap">
                           <strong className="price">${item.price}</strong>
-                          <del className="price-old">
-                            ${item.price + item.price * Math.random()}
-                          </del>
+                          <del className="price-old">${item.price * 1.2}</del>
                         </div>
                         <p className="title mb-2">{item.title}</p>
-                        <a href="#" className="btn btn-primary">
+                        <a
+                          href="#"
+                          className="btn btn-primary me-1"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            addItemToCart(item);
+                          }}
+                        >
                           Add to cart
-                        </a>{" "}
-                        <a href="#" className="btn btn-light btn-icon">
-                          {" "}
-                          <i className="fa fa-heart"></i>{" "}
+                        </a>
+                        <a
+                          href="#"
+                          className="btn btn-light btn-icon"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            addItemToWishList(item);
+                          }}
+                        >
+                          <i className="fa fa-heart"></i>
                         </a>
                       </figcaption>
                     </figure>
