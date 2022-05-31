@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ cart, wishList }) => {
   return (
     <header className="section-header">
       <section className="header-main bg-warning bg-gradient">
@@ -19,32 +19,36 @@ const Navbar = () => {
                     Sign in{" "}
                   </span>
                 </a>
-                <a href="#" className="btn btn-light position-relative mx-2">
-                  <i className="fa fa-heart"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline-block">
-                    Wishlist
-                  </span>
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    style={{ zIndex: 9 }}
+                {wishList.length > 0 && (
+                  <a href="#" className="btn btn-light position-relative mx-2">
+                    <i className="fa fa-heart"></i>{" "}
+                    <span className="ms-1 d-none d-sm-inline-block">
+                      Wishlist
+                    </span>
+                    <span
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      style={{ zIndex: 9 }}
+                    >
+                      {wishList.length}
+                    </span>
+                  </a>
+                )}
+                {cart.length > 0 && (
+                  <a
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvas_cart"
+                    className="btn btn-light position-relative mx-2"
                   >
-                    99
-                  </span>
-                </a>
-                <a
-                  data-bs-toggle="offcanvas"
-                  href="#offcanvas_cart"
-                  className="btn btn-light position-relative mx-2"
-                >
-                  <i className="fa fa-shopping-cart"></i>{" "}
-                  <span className="ms-1">My cart </span>
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    style={{ zIndex: 9 }}
-                  >
-                    99+
-                  </span>
-                </a>
+                    <i className="fa fa-shopping-cart"></i>{" "}
+                    <span className="ms-1">My cart </span>
+                    <span
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      style={{ zIndex: 9 }}
+                    >
+                      {cart.length}
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
             <div className="col-lg-5 col-md-12 col-12">
